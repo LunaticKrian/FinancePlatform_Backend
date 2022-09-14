@@ -3,8 +3,8 @@
 
     <contextName>krian</contextName>
 
-    <!-- 日志的输出目录 -->
-    <property name="log.path" value="E:\SoftwareProject\FinancePlatform\src\main\resources"/>
+    <!-- 日志的输出目录，目录使用反斜线 / 分割 -->
+    <property name="log.path" value="E:/SoftwareProject/FinancePlatform/src/main/resources"/>
 
     <!--控制台日志格式：彩色日志-->
     <!-- magenta:洋红 -->
