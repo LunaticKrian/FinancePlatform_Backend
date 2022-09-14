@@ -1,0 +1,4 @@
+2022/09/13 13:27:52 [emerg] 24248#12728: unknown directive "localhost" in E:\SoftwareProject\FinancePlatform\nginx-1.18.0/conf/nginx.conf:40
+2022/09/13 13:28:46 [emerg] 15876#22368: unknown directive "localhost" in E:\SoftwareProject\FinancePlatform\nginx-1.18.0/conf/nginx.conf:40
+2022/09/13 13:30:08 [error] 608#9976: *1 CreateFile() "E:\SoftwareProject\FinancePlatform\nginx-1.18.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/09/14 20:47:18 [error] 22628#24144: *18 CreateFile() "E:\SoftwareProject\FinancePlatform\nginx-1.18.0/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/admin/core/integralGrade/list"
