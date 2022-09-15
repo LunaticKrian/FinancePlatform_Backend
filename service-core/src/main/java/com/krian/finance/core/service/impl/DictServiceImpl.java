@@ -52,4 +52,35 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
         });
         return excelDictDtoArrayList;
     }
+
+    @Override
+    public List<Dict> listByParentId(Long parentId) {
+        QueryWrapper<Dict> dictQueryWrapper = new QueryWrapper<>();
+        dictQueryWrapper.eq("parent_id", parentId);
+        List<Dict> dictList = baseMapper.selectList(dictQueryWrapper);
+
+        // 填充hashChildren字段：
+        dictList.forEach(dict -> {
+            // 判断当前节点是否子节点，找到当前的dict下级有没有子节点：
+            boolean hasChildren = this.hasChildren(dict.getId());
+            dict.setHasChildren(hasChildren);
+        });
+        return dictList;
+    }
+
+    /**
+     * 判断当前id所以的所在节点下是否有子节点
+     *
+     * @param id
+     * @return boolean
+     */
+    private boolean hasChildren(Long id) {
+        QueryWrapper<Dict> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("parent_id", id);
+        Long count = baseMapper.selectCount(queryWrapper);
+        if (count.intValue() > 0) {
+            return true;
+        }
+        return false;
+    }
 }

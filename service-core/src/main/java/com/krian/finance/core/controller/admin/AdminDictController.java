@@ -87,9 +87,8 @@ public class AdminDictController {
             @ApiParam(value = "上级节点id", required = true)
             @PathVariable Long parentId) {
 
-//        List<Dict> dictList = dictService.listByParentId(parentId);
-//        return R.SUCCESS().data("list", dictList);
-        return null;
+        List<Dict> dictList = dictService.listByParentId(parentId);
+        return R.SUCCESS().data("list", dictList);
     }
 
 }
