@@ -1,7 +1,10 @@
 package com.krian.finance.core.mapper;
 
-import com.krian.finance.core.pojo.entity.Dict;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.krian.finance.core.pojo.dto.ExcelDictDto;
+import com.krian.finance.core.pojo.entity.Dict;
+
+import java.util.List;
 
 /**
  * <p>
@@ -12,5 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2022-09-11
  */
 public interface DictMapper extends BaseMapper<Dict> {
-
+    void insertBatch(List<ExcelDictDto> list);
 }
