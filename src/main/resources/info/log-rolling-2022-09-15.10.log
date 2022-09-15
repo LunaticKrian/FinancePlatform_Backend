@@ -1,0 +1,20 @@
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=81004, parentId=81000, name=结束, value=3, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:49 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库......
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:52 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库成功！
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=81005, parentId=81000, name=审批不通过, value=-1, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82000, parentId=1, name=学校性质, value=null, dictCode=SchoolStatus)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82001, parentId=82000, name=211/985, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82002, parentId=82000, name=一本, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82003, parentId=82000, name=二本, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:49 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库......
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:52 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库成功！
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82004, parentId=82000, name=三本, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82005, parentId=82000, name=高职高专, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82006, parentId=82000, name=中职中专, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=82007, parentId=82000, name=高中及以下, value=null, dictCode=null)
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:49 com.krian.finance.core.listener.ExcelDictDtoListener 4 条数被存储到数据库......
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:52 com.krian.finance.core.listener.ExcelDictDtoListener 4 条数被存储到数据库成功！
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:45 com.krian.finance.core.listener.ExcelDictDtoListener 所有数据解析完成！
+2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 DictServiceImpl.java:39 com.krian.finance.core.service.impl.DictServiceImpl Excel导入成功
+2022-09-15 15:09:20 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 1736 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 15:09:20 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev

@@ -38,4 +38,18 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
         EasyExcel.read(inputStream, ExcelDictDto.class, new ExcelDictDtoListener(baseMapper)).sheet().doRead();
         log.info("Excel导入成功");
     }
+
+    @Override
+    public List<ExcelDictDto> listDictData() {
+        List<Dict> dictList = baseMapper.selectList(null);
+
+        // 创建ExcelDictDto列表，转换Dict对象：
+        ArrayList<ExcelDictDto> excelDictDtoArrayList = new ArrayList<>(dictList.size());
+        dictList.forEach(dict -> {
+            ExcelDictDto excelDictDto = new ExcelDictDto();
+            BeanUtils.copyProperties(dict, excelDictDto);
+            excelDictDtoArrayList.add(excelDictDto);
+        });
+        return excelDictDtoArrayList;
+    }
 }

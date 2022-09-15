@@ -67,7 +67,7 @@ public class AdminDictController {
         // 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系
         String fileName = URLEncoder.encode("mydict", "UTF-8").replaceAll("\\+", "%20");
         response.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileName + ".xlsx");
-//        EasyExcel.write(response.getOutputStream(), ExcelDictDto.class).sheet("数据字典").doWrite(dictService.listDictData());
+        EasyExcel.write(response.getOutputStream(), ExcelDictDto.class).sheet("数据字典").doWrite(dictService.listDictData());
     }
 
 
