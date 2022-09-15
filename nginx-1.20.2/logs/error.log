@@ -1,0 +1,2 @@
+2022/09/15 12:10:29 [error] 10264#10976: *1 CreateFile() "C:\Users\Krian\Desktop\nginx-1.20.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/09/15 12:10:56 [notice] 13888#9184: signal process started
