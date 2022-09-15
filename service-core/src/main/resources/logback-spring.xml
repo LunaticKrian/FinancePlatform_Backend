@@ -66,15 +66,15 @@
 
     </appender>
 
-<!--     日志记录器  -->
-<!--        <logger name="com.krian" level="INFO">-->
-<!--            <appender-ref ref="CONSOLE" />-->
-<!--            <appender-ref ref="FILE" />-->
-<!--        </logger>-->
+<!--    &lt;!&ndash;日志记录器&ndash;&gt;-->
+<!--    <logger name="com.krian" level="INFO">-->
+<!--        <appender-ref ref="CONSOLE"/>-->
+<!--        <appender-ref ref="FILE"/>-->
+<!--    </logger>-->
 
     <!-- 开发环境和测试环境 -->
     <springProfile name="dev,test">
-        <logger name="jw.srb" level="INFO">
+        <logger name="com.krian" level="INFO">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="ROLLING_FILE"/>
         </logger>
@@ -82,7 +82,7 @@
 
     <!-- 生产环境 -->
     <springProfile name="prod">
-        <logger name="jw.srb" level="ERROR">
+        <logger name="com.krian" level="ERROR">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="FILE"/>
         </logger>

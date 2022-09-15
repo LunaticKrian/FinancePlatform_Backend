@@ -8,8 +8,11 @@ import com.krian.common.result.ResponseEnum;
 import com.krian.finance.core.pojo.dto.ExcelDictDto;
 import com.krian.finance.core.pojo.entity.Dict;
 import com.krian.finance.core.service.DictService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,22 +31,25 @@ import java.util.List;
  * @author krian
  * @since 2022-09-11
  */
+@Api(tags = "数据字典管理")
+@Slf4j
+@CrossOrigin
 @RestController
-@RequestMapping("/dict")
+@RequestMapping("/admin/core/dict")
 public class AdminDictController {
 
-    @Resource
+    @Autowired
     DictService dictService;
 
     @ApiOperation("Excel数据的批量导入")
     @PostMapping("/import")
     public R batchImport(
             @ApiParam(value = "Excel数据字典文件", required = true)
-            @RequestParam("file") MultipartFile file){
+            @RequestParam("file") MultipartFile file) {
 
         try {
             InputStream inputStream = file.getInputStream();
-//            dictService.importData(inputStream);
+            dictService.importData(inputStream);
 
             return R.SUCCESS().message("数据字典数据批量导入成功");
 
@@ -79,7 +85,7 @@ public class AdminDictController {
     @GetMapping("/listByParentId/{parentId}")
     public R listByParentId(
             @ApiParam(value = "上级节点id", required = true)
-            @PathVariable Long parentId){
+            @PathVariable Long parentId) {
 
 //        List<Dict> dictList = dictService.listByParentId(parentId);
 //        return R.SUCCESS().data("list", dictList);

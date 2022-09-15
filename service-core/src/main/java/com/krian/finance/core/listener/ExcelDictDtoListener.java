@@ -12,7 +12,6 @@ import java.util.List;
 @Slf4j
 public class ExcelDictDtoListener extends AnalysisEventListener<ExcelDictDto> {
 
-
     private DictMapper dictMapper;
 
     //数据列表
@@ -29,11 +28,11 @@ public class ExcelDictDtoListener extends AnalysisEventListener<ExcelDictDto> {
     public void invoke(ExcelDictDto data, AnalysisContext context) {
         log.info("解析到一条记录: {}", data);
         //将数据存入数据列表
-        list.add(data);
-        if (list.size() >= BATCH_COUNT) {
-            saveData();
-            list.clear();
-        }
+//        list.add(data);
+//        if (list.size() >= BATCH_COUNT) {
+//            saveData();
+//            list.clear();
+//        }
     }
 
     @Override

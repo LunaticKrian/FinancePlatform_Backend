@@ -1,0 +1,12 @@
+2022-09-15 12:33:43 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 9184 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 12:33:43 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-15 12:33:46 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 3.61 seconds (JVM running for 4.421)
+2022-09-15 12:34:10 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 10452 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 12:34:10 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-15 12:34:13 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 3.619 seconds (JVM running for 4.344)
+2022-09-15 12:35:29 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 2452 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 12:35:29 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-15 12:35:32 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 3.983 seconds (JVM running for 4.767)
+2022-09-15 12:36:41 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 12676 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 12:36:41 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-15 12:36:44 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 3.58 seconds (JVM running for 4.406)
