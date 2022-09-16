@@ -1,0 +1,7 @@
+2022-09-16 09:53:49 [INFO ] main StartupInfoLogger.java:61 com.krian.service.core.RedisTemplateTest Started RedisTemplateTest in 7.056 seconds (JVM running for 8.351)
+2022-09-16 09:53:50 [INFO ] main RedisTemplateTest.java:39 com.krian.service.core.RedisTemplateTest null
+2022-09-16 09:53:57 [INFO ] main StartupInfoLogger.java:55 com.krian.service.core.RedisTemplateTest Starting RedisTemplateTest on DESKTOP-O0VU2GF with PID 12376 (started by Krian in E:\SoftwareProject\FinancePlatform\service-core)
+2022-09-16 09:53:57 [INFO ] main SpringApplication.java:655 com.krian.service.core.RedisTemplateTest The following profiles are active: dev
+2022-09-16 09:54:03 [INFO ] main StartupInfoLogger.java:61 com.krian.service.core.RedisTemplateTest Started RedisTemplateTest in 6.77 seconds (JVM running for 8.012)
+2022-09-16 09:54:11 [INFO ] main StartupInfoLogger.java:55 com.krian.service.core.RedisTemplateTest Starting RedisTemplateTest on DESKTOP-O0VU2GF with PID 18116 (started by Krian in E:\SoftwareProject\FinancePlatform\service-core)
+2022-09-16 09:54:11 [INFO ] main SpringApplication.java:655 com.krian.service.core.RedisTemplateTest The following profiles are active: dev

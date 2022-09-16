@@ -1,0 +1,6 @@
+2022-09-15 18:52:10 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 4.459 seconds (JVM running for 5.339)
+2022-09-15 19:17:43 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 8676 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 19:17:43 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-15 19:17:46 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 3.868 seconds (JVM running for 4.668)
+2022-09-15 19:39:52 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 5640 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-15 19:39:52 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
