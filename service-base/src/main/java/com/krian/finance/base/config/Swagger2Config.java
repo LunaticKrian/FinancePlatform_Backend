@@ -35,4 +35,23 @@ public class Swagger2Config {
                 .contact(new Contact("krian", "http://krian.com", "krian@qq.com"))  // 联系人
                 .build();
     }
+
+    @Bean
+    public Docket webApiConfig(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("webApi")
+                .apiInfo(webApiInfo())
+                .select()
+                .paths(Predicates.and(PathSelectors.regex("/api/.*")))
+                .build();
+    }
+
+    private ApiInfo webApiInfo(){
+        return new ApiInfoBuilder()
+                .title("交易平台后台管理系统API文档")
+                .description("本文档描述资金交易平台后台系统的各个模块的接口调用方式")
+                .version("1.0")
+                .contact(new Contact("krian", "http://krian.com", "krian@qq.com"))  // 联系人
+                .build();
+    }
 }
