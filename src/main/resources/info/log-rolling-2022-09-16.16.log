@@ -1,0 +1,8 @@
+2022-09-16 19:11:42 [INFO ] http-nio-8110-exec-1 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
+2022-09-16 19:11:42 [INFO ] http-nio-8110-exec-1 DictServiceImpl.java:69 com.krian.finance.core.service.impl.DictServiceImpl 获取Redis中Dict数据成功！
+2022-09-16 19:11:46 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
+2022-09-16 19:11:46 [INFO ] http-nio-8110-exec-3 DictServiceImpl.java:91 com.krian.finance.core.service.impl.DictServiceImpl 将数据存入Redis中！
+2022-09-16 19:11:59 [INFO ] http-nio-8110-exec-6 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
+2022-09-16 19:11:59 [INFO ] http-nio-8110-exec-6 DictServiceImpl.java:69 com.krian.finance.core.service.impl.DictServiceImpl 获取Redis中Dict数据成功！
+2022-09-16 20:04:43 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 18360 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
+2022-09-16 20:04:43 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
