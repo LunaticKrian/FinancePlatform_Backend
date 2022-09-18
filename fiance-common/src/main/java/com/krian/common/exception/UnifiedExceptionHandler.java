@@ -25,10 +25,17 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import java.sql.SQLException;
 
 @Slf4j
-// @ControllerAdvice  // 统一异常处理注解（异常处理 切面编程 AOP）
-// @ResponseBody  // 以JSON格式响应给前端
-@RestControllerAdvice  // 合并了上面两个注解
+@ControllerAdvice  // 统一异常处理注解（异常处理 切面编程 AOP）
+@ResponseBody  // 以JSON格式响应给前端
+//@RestControllerAdvice  // 合并了上面两个注解
 public class UnifiedExceptionHandler {
+
+    // 捕获所有异常，通用异常处理：
+    @ExceptionHandler(value = Exception.class)
+    public R handleException(Exception e){
+        log.error(e.getMessage(), e);
+        return R.ERROR();
+    }
 
     // 特定异常类型捕获：
     @ExceptionHandler(value = SQLException.class)
@@ -39,16 +46,10 @@ public class UnifiedExceptionHandler {
 
     // 捕获自定义异常：
     @ExceptionHandler(value = BusinessException.class)
-    public R handleException(BusinessException exception) {
-        log.error(exception.getMessage(), exception);
-        return R.setResult(ResponseEnum.BAD_SQL_GRAMMAR_ERROR);
-    }
-
-    // 捕获所有异常，通用异常处理：
-    @ExceptionHandler(value = Exception.class)
-    public R handleException(Exception exception) {
-        log.error(exception.getMessage(), exception);
-        return R.ERROR().message(exception.getMessage());
+    public R handleException(BusinessException e){
+        log.info("触发自定义异常捕获......");
+        log.error(e.getMessage(), e);
+        return R.ERROR().message(e.getMessage()).code(e.getCode());
     }
 
     /**
@@ -72,7 +73,7 @@ public class UnifiedExceptionHandler {
     })
     public R handleServletException(Exception e) {
         log.error(e.getMessage(), e);
-        //SERVLET_ERROR(-102, "servlet请求异常"),
+        // SERVLET_ERROR(-102, "servlet请求异常"),
         return R.ERROR().message(ResponseEnum.SERVLET_ERROR.getMessage()).code(ResponseEnum.SERVLET_ERROR.getCode());
     }
 }
