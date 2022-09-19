@@ -4,7 +4,10 @@ package com.krian.finance.core.controller.api;
 import com.krian.common.exception.Assert;
 import com.krian.common.result.R;
 import com.krian.common.result.ResponseEnum;
+import com.krian.common.utils.RegexValidateUtils;
+import com.krian.finance.core.pojo.vo.LoginVo;
 import com.krian.finance.core.pojo.vo.RegisterVo;
+import com.krian.finance.core.pojo.vo.UserInfoVo;
 import com.krian.finance.core.service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -14,6 +17,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -39,6 +43,15 @@ public class UserInfoController {
     @ApiOperation("会员注册")
     @PostMapping("/register")
     public R register(@RequestBody RegisterVo registerVo) {
+        // 数据校验：
+        String mobile = registerVo.getMobile();
+        String password = registerVo.getPassword();
+        String code = registerVo.getCode();
+
+        Assert.notEmpty(mobile, ResponseEnum.MOBILE_NULL_ERROR);
+        Assert.notEmpty(password, ResponseEnum.PASSWORD_NULL_ERROR);
+        Assert.notEmpty(code, ResponseEnum.CODE_NULL_ERROR);
+        Assert.isTrue(RegexValidateUtils.checkCellphone(mobile), ResponseEnum.MOBILE_ERROR);
 
         // 1.校验验证嘛是否正确：
         String codeGen = (String) redisTemplate.opsForValue().get("krian:sms:code:" + registerVo.getMobile());  // 从Redis中获取验证码(生成的验证码)
@@ -50,6 +63,23 @@ public class UserInfoController {
         userInfoService.register(registerVo);
 
         return R.SUCCESS().message("注册成功！");
+    }
+
+    @ApiOperation("会员登录")
+    @PostMapping("/login")
+    public R login(@RequestBody LoginVo loginVo, HttpServletRequest request){
+        // 获取会员登录信息：
+        String mobile = loginVo.getMobile();
+        String password = loginVo.getPassword();
+
+        // 参数校验：
+        Assert.notEmpty(mobile, ResponseEnum.MOBILE_ERROR);
+        Assert.notEmpty(password, ResponseEnum.PASSWORD_NULL_ERROR);
+
+        String ip = request.getRemoteAddr();  // 获取当前请求的IP地址
+        UserInfoVo userInfoVo = userInfoService.login(loginVo, ip);
+
+        return R.SUCCESS().data("userInfo", userInfoVo);
     }
 }
 

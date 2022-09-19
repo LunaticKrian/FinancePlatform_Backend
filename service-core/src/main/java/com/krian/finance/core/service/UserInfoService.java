@@ -2,7 +2,9 @@ package com.krian.finance.core.service;
 
 import com.krian.finance.core.pojo.entity.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.krian.finance.core.pojo.vo.LoginVo;
 import com.krian.finance.core.pojo.vo.RegisterVo;
+import com.krian.finance.core.pojo.vo.UserInfoVo;
 
 /**
  * <p>
@@ -15,4 +17,6 @@ import com.krian.finance.core.pojo.vo.RegisterVo;
 public interface UserInfoService extends IService<UserInfo> {
 
     void register(RegisterVo registerVo);
+
+    UserInfoVo login(LoginVo loginVo, String ip);
 }

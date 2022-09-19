@@ -4,11 +4,16 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.krian.common.exception.Assert;
 import com.krian.common.result.ResponseEnum;
 import com.krian.common.utils.MD5;
+import com.krian.finance.base.utils.JwtUtils;
 import com.krian.finance.core.mapper.UserAccountMapper;
 import com.krian.finance.core.mapper.UserInfoMapper;
+import com.krian.finance.core.mapper.UserLoginRecordMapper;
 import com.krian.finance.core.pojo.entity.UserAccount;
 import com.krian.finance.core.pojo.entity.UserInfo;
+import com.krian.finance.core.pojo.entity.UserLoginRecord;
+import com.krian.finance.core.pojo.vo.LoginVo;
 import com.krian.finance.core.pojo.vo.RegisterVo;
+import com.krian.finance.core.pojo.vo.UserInfoVo;
 import com.krian.finance.core.service.UserInfoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +33,9 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
     @Autowired
     private UserAccountMapper userAccountMapper;
+
+    @Autowired
+    private UserLoginRecordMapper userLoginRecordMapper;
 
     @Transactional(rollbackFor = Exception.class)  // 事务回滚
     @Override
@@ -53,5 +61,51 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
         UserAccount userAccount = new UserAccount();
         userAccount.setUserId(userInfo.getId());
         userAccountMapper.insert(userAccount);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public UserInfoVo login(LoginVo loginVo, String ip) {
+        // 获取前端传递的参数：
+        String mobile = loginVo.getMobile();
+        String password = loginVo.getPassword();
+        Integer userType = loginVo.getUserType();
+
+        // 判断用户是否存在：
+        // 1.创建查询条件构造器，查询数据库中是否包含记录：
+        QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper
+                .eq("mobile", mobile)
+                .eq("user_type", userType);
+        UserInfo userInfo = baseMapper.selectOne(queryWrapper);
+        // 2.断言从数据库中获取的UserInfo对象不为null：
+        Assert.notNull(userInfo, ResponseEnum.LOGIN_MOBILE_ERROR);
+
+        // 判断密码是否正确：
+        Assert.equals(MD5.encrypt(password), userInfo.getPassword(), ResponseEnum.LOGIN_PASSWORD_ERROR);
+
+        // 断言用户是否被禁用：
+        Assert.equals(userInfo.getStatus(), UserInfo.STATUS_NORMAL, ResponseEnum.LOGIN_LOKED_ERROR);
+
+        // 记录登录日志：
+        UserLoginRecord userLoginRecord = new UserLoginRecord();
+        userLoginRecord.setUserId(userInfo.getId());
+        userLoginRecord.setIp(ip);
+        userLoginRecordMapper.insert(userLoginRecord);
+
+        // 生成token：
+        String token = JwtUtils.createToken(userInfo.getId(), userInfo.getName());
+
+        // 组装UserInfoVo：
+        UserInfoVo userInfoVO = new UserInfoVo();
+        userInfoVO.setToken(token);
+        userInfoVO.setName(userInfo.getName());
+        userInfoVO.setNickName(userInfo.getNickName());
+        userInfoVO.setHeadImg(userInfo.getHeadImg());
+        userInfoVO.setMobile(mobile);
+        userInfoVO.setUserType(userType);
+
+        // 返回：
+        return userInfoVO;
     }
 }
