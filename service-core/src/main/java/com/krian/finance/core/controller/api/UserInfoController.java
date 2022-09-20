@@ -5,6 +5,7 @@ import com.krian.common.exception.Assert;
 import com.krian.common.result.R;
 import com.krian.common.result.ResponseEnum;
 import com.krian.common.utils.RegexValidateUtils;
+import com.krian.finance.base.utils.JwtUtils;
 import com.krian.finance.core.pojo.vo.LoginVo;
 import com.krian.finance.core.pojo.vo.RegisterVo;
 import com.krian.finance.core.pojo.vo.UserInfoVo;
@@ -29,7 +30,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Api(tags = "会员接口")
 @Slf4j
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/api/core/userInfo")
 public class UserInfoController {
@@ -80,6 +81,26 @@ public class UserInfoController {
         UserInfoVo userInfoVo = userInfoService.login(loginVo, ip);
 
         return R.SUCCESS().data("userInfo", userInfoVo);
+    }
+
+    @ApiOperation("校验令牌")
+    @GetMapping("/checkToken")
+    public R checkToken(HttpServletRequest request) {
+
+        String token = request.getHeader("token");
+        boolean result = JwtUtils.checkToken(token);
+
+        if(result){
+            return R.SUCCESS();
+        }else{
+            return R.setResult(ResponseEnum.LOGIN_AUTH_ERROR);
+        }
+    }
+
+    @ApiOperation("校验手机号是否被注册")
+    @GetMapping("/checkMobile/{mobile}")
+    public boolean checkMobile(@PathVariable String mobile){
+        return userInfoService.checkMobile(mobile);
     }
 }
 

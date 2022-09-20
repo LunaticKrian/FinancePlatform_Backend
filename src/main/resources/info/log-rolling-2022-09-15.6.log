@@ -1,8 +1,0 @@
-2022-09-15 14:15:51 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 4.195 seconds (JVM running for 5.106)
-2022-09-15 14:20:03 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.core.ServiceCoreApplication Starting ServiceCoreApplication on DESKTOP-O0VU2GF with PID 13536 (E:\SoftwareProject\FinancePlatform\service-core\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
-2022-09-15 14:20:03 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
-2022-09-15 14:20:06 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 4.24 seconds (JVM running for 5.119)
-2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=1, parentId=0, name=全部分类, value=null, dictCode=ROOT)
-2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20000, parentId=1, name=行业, value=null, dictCode=industry)
-2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20001, parentId=20000, name=IT, value=1, dictCode=null)
-2022-09-15 14:21:40 [INFO ] http-nio-8110-exec-10 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20002, parentId=20000, name=医生, value=2, dictCode=null)

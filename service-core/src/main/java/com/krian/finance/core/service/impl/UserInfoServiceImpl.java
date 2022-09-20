@@ -1,6 +1,9 @@
 package com.krian.finance.core.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.krian.common.exception.Assert;
 import com.krian.common.result.ResponseEnum;
 import com.krian.common.utils.MD5;
@@ -11,6 +14,7 @@ import com.krian.finance.core.mapper.UserLoginRecordMapper;
 import com.krian.finance.core.pojo.entity.UserAccount;
 import com.krian.finance.core.pojo.entity.UserInfo;
 import com.krian.finance.core.pojo.entity.UserLoginRecord;
+import com.krian.finance.core.pojo.query.UserInfoQuery;
 import com.krian.finance.core.pojo.vo.LoginVo;
 import com.krian.finance.core.pojo.vo.RegisterVo;
 import com.krian.finance.core.pojo.vo.UserInfoVo;
@@ -107,5 +111,42 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfo> i
 
         // 返回：
         return userInfoVO;
+    }
+
+    @Override
+    public IPage<UserInfo> listPage(Page<UserInfo> pageParam, UserInfoQuery userInfoQuery) {
+        if(userInfoQuery == null){
+            return baseMapper.selectPage(pageParam, null);
+        }
+
+        String mobile = userInfoQuery.getMobile();
+        Integer status = userInfoQuery.getStatus();
+        Integer userType = userInfoQuery.getUserType();
+
+        QueryWrapper<UserInfo> userInfoQueryWrapper = new QueryWrapper<>();
+        userInfoQueryWrapper
+                .eq(StringUtils.isNotBlank(mobile), "mobile", mobile)
+                .eq(status != null, "status", status)
+                .eq(userType != null, "user_type", userType);
+
+
+        return baseMapper.selectPage(pageParam, userInfoQueryWrapper);
+    }
+
+    @Override
+    public void lock(Long id, Integer status) {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setId(id);
+        userInfo.setStatus(status);
+        baseMapper.updateById(userInfo);
+    }
+
+    @Override
+    public boolean checkMobile(String mobile) {
+        // 查询数据库，当前传递的mobile是否存在：
+        QueryWrapper<UserInfo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("mobile", mobile);
+        Integer count = baseMapper.selectCount(queryWrapper);
+        return count > 0;
     }
 }

@@ -7,6 +7,11 @@ spring:
   application:
     name: service-sms # 服务名
 
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848  # nacos服务地址
+
   #spring:
   redis:
     host: 82.157.192.119
@@ -29,3 +34,20 @@ aliyun:
     key-secret: N7v6R4V3EJ1SGDZlsqtqo8QyVVMmtQ
     template-code: SMS_96695065
     sign-name: krian
+
+# openfeign 请求超时设置：
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000  #连接超时时间
+        read-timeout: 600000   #执行超时时间
+
+  # 开启服务熔断支持：
+  sentinel:
+    enabled: true
+
+# 设置日志级别：
+logging:
+  level:
+    com.krian.finance.sms.client.CoreUserInfoClient: DEBUG  #以指定级别监控指定接口

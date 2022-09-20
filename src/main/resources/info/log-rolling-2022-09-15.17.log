@@ -1,8 +1,0 @@
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=1, parentId=0, name=全部分类, value=null, dictCode=ROOT)
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20000, parentId=1, name=行业, value=null, dictCode=industry)
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20001, parentId=20000, name=IT, value=1, dictCode=null)
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20002, parentId=20000, name=医生, value=2, dictCode=null)
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20003, parentId=20000, name=教师, value=3, dictCode=null)
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:49 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库......
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:52 com.krian.finance.core.listener.ExcelDictDtoListener 5 条数被存储到数据库成功！
-2022-09-15 15:12:19 [INFO ] http-nio-8110-exec-4 ExcelDictDtoListener.java:32 com.krian.finance.core.listener.ExcelDictDtoListener 解析到一条记录: ExcelDictDto(id=20004, parentId=20000, name=导游, value=4, dictCode=null)

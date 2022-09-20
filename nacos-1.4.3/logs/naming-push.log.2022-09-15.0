@@ -1,0 +1,30 @@
+2022-09-15 20:56:00,525 INFO DEFAULT_GROUP@@orderservice is changed, add it to push queue.
+
+2022-09-15 20:56:00,543 INFO serviceName: DEFAULT_GROUP@@orderservice changed, schedule push for: 192.168.237.1:57021, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,57021,80319071810800
+
+2022-09-15 20:56:00,543 INFO send udp packet: 192.168.237.1,57021,80319071810800
+
+2022-09-15 20:56:00,550 INFO received ack: {"type": "push-ack", "lastRefTime":"80319071810800", "data":""} from: 192.168.237.1:57021, cost: 7 ms, unacked: 0, total push: 1
+
+2022-09-15 20:56:05,438 INFO DEFAULT_GROUP@@userservice is changed, add it to push queue.
+
+2022-09-15 20:56:05,441 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:52418, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,52418,80323978211200
+
+2022-09-15 20:56:05,441 INFO send udp packet: 192.168.237.1,52418,80323978211200
+
+2022-09-15 20:56:05,446 INFO received ack: {"type": "push-ack", "lastRefTime":"80323978211200", "data":""} from: 192.168.237.1:52418, cost: 5 ms, unacked: 0, total push: 2
+
+2022-09-15 20:56:07,810 INFO DEFAULT_GROUP@@userservice is changed, add it to push queue.
+
+2022-09-15 20:56:07,811 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:65316, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,65316,80326347528700
+
+2022-09-15 20:56:07,811 INFO send udp packet: 192.168.237.1,65316,80326347528700
+
+2022-09-15 20:56:07,812 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:52418, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,52418,80326347528700
+
+2022-09-15 20:56:07,812 INFO send udp packet: 192.168.237.1,52418,80326347528700
+
+2022-09-15 20:56:07,815 INFO received ack: {"type": "push-ack", "lastRefTime":"80326347528700", "data":""} from: 192.168.237.1:65316, cost: 4 ms, unacked: 1, total push: 4
+
+2022-09-15 20:56:07,816 INFO received ack: {"type": "push-ack", "lastRefTime":"80326347528700", "data":""} from: 192.168.237.1:52418, cost: 4 ms, unacked: 0, total push: 4
+

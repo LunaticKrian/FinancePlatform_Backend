@@ -1,0 +1,12 @@
+2022-09-15 20:55:59,513 INFO DEFAULT_GROUP@@orderservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8080:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-15 20:55:59,516 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@orderservice, ips: 192.168.153.1:8080_true,
+
+2022-09-15 20:56:04,421 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8081:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-15 20:56:04,421 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,
+
+2022-09-15 20:56:06,805 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8082:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-15 20:56:06,805 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,192.168.153.1:8082_true,
+

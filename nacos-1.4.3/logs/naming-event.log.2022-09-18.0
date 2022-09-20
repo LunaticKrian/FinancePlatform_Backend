@@ -1,0 +1,28 @@
+2022-09-18 08:43:48,188 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8080@DEFAULT@DEFAULT_GROUP@@orderservice, region: unknown, msg: client timeout after 15000, last beat: 1663424245864
+
+2022-09-18 08:43:48,192 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8081@DEFAULT@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1663424245093
+
+2022-09-18 08:43:49,700 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8082@DEFAULT@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1663424246038
+
+2022-09-18 08:43:51,723 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 2, content: [192.168.153.1:8081:unknown:DEFAULT_1.0_false_false_DEFAULT, 192.168.153.1:8082:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2022-09-18 08:43:51,729 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2022-09-18 08:43:52,188 INFO DEFAULT_GROUP@@orderservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8080:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2022-09-18 08:43:52,188 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@orderservice, ips: 
+
+2022-09-18 08:43:52,188 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2022-09-18 08:43:52,696 INFO DEFAULT_GROUP@@orderservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8080:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-18 08:43:52,696 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@orderservice, ips: 192.168.153.1:8080_true,
+
+2022-09-18 08:43:52,867 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8082:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-18 08:43:52,867 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8082_true,
+
+2022-09-18 08:43:56,660 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8081:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-18 08:43:56,660 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,192.168.153.1:8082_true,
+

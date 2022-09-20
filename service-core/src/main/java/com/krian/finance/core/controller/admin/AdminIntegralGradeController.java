@@ -24,7 +24,7 @@ import java.util.List;
  * @since 2022-09-11
  */
 @Api(tags = "积分等级管理")  // Swagger2 API分类标签
-@CrossOrigin  // 允许跨域请求
+//@CrossOrigin  // 允许跨域请求
 @RestController
 @RequestMapping("/admin/core/integralGrade")
 public class AdminIntegralGradeController {

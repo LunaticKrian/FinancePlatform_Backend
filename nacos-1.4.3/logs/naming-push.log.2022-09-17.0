@@ -1,0 +1,64 @@
+2022-09-17 07:28:40,179 INFO DEFAULT_GROUP@@orderservice is changed, add it to push queue.
+
+2022-09-17 07:28:41,070 INFO serviceName: DEFAULT_GROUP@@orderservice changed, schedule push for: 192.168.237.1:57021, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,57021,204682253119800
+
+2022-09-17 07:28:41,070 INFO send udp packet: 192.168.237.1,57021,204682253119800
+
+2022-09-17 07:28:41,769 ERROR [NACOS-PUSH] failed to push data: {type=dom, data={"hosts":[{"ip":"192.168.153.1","port":8080,"valid":true,"healthy":true,"marked":false,"instanceId":"192.168.153.1#8080#DEFAULT#DEFAULT_GROUP@@orderservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"enabled":true,"weight":1.0,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@orderservice","ephemeral":true}],"dom":"DEFAULT_GROUP@@orderservice","name":"DEFAULT_GROUP@@orderservice","cacheMillis":10000,"lastRefTime":1663370920358,"checksum":"8f2aa052efdf46768a2561ad5aa64e5c","useSpecifiedURL":false,"clusters":"DEFAULT","env":"","metadata":{}}, lastRefTime=204682253119800} to client: 192.168.237.1, error: {}
+
+java.net.SocketException: Network is unreachable: Datagram send failed
+	at java.net.DualStackPlainDatagramSocketImpl.socketSend(Native Method)
+	at java.net.DualStackPlainDatagramSocketImpl.send(DualStackPlainDatagramSocketImpl.java:136)
+	at java.net.DatagramSocket.send(DatagramSocket.java:693)
+	at com.alibaba.nacos.naming.push.PushService.udpPush(PushService.java:615)
+	at com.alibaba.nacos.naming.push.PushService.lambda$onApplicationEvent$1(PushService.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-09-17 07:28:41,882 INFO DEFAULT_GROUP@@userservice is changed, add it to push queue.
+
+2022-09-17 07:28:41,882 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:57021, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,57021,204683790194900
+
+2022-09-17 07:28:41,882 INFO send udp packet: 192.168.237.1,57021,204683790194900
+
+2022-09-17 07:28:41,883 ERROR [NACOS-PUSH] failed to push data: {type=dom, data={"hosts":[{"ip":"192.168.153.1","port":8081,"valid":true,"healthy":true,"marked":false,"instanceId":"192.168.153.1#8081#DEFAULT#DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"enabled":true,"weight":1.0,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","ephemeral":true},{"ip":"192.168.153.1","port":8082,"valid":true,"healthy":true,"marked":false,"instanceId":"192.168.153.1#8082#DEFAULT#DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"enabled":true,"weight":1.0,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","ephemeral":true}],"dom":"DEFAULT_GROUP@@userservice","name":"DEFAULT_GROUP@@userservice","cacheMillis":10000,"lastRefTime":1663370921882,"checksum":"15e26837305e0c0d9b64e65be0fb0e43","useSpecifiedURL":false,"clusters":"","env":"","metadata":{}}, lastRefTime=204683790194900} to client: 192.168.237.1, error: {}
+
+java.net.SocketException: Network is unreachable: Datagram send failed
+	at java.net.DualStackPlainDatagramSocketImpl.socketSend(Native Method)
+	at java.net.DualStackPlainDatagramSocketImpl.send(DualStackPlainDatagramSocketImpl.java:136)
+	at java.net.DatagramSocket.send(DatagramSocket.java:693)
+	at com.alibaba.nacos.naming.push.PushService.udpPush(PushService.java:615)
+	at com.alibaba.nacos.naming.push.PushService.lambda$onApplicationEvent$1(PushService.java:170)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-09-17 07:28:43,546 INFO DEFAULT_GROUP@@userservice is changed, add it to push queue.
+
+2022-09-17 07:28:43,546 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:57021, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,57021,204685454388000
+
+2022-09-17 07:28:43,547 INFO send udp packet: 192.168.237.1,57021,204685454388000
+
+2022-09-17 07:28:43,787 INFO received ack: {"type": "push-ack", "lastRefTime":"204685454388000", "data":""} from: 192.168.237.1:57021, cost: 240 ms, unacked: 0, total push: 3
+
+2022-09-17 07:28:45,870 INFO DEFAULT_GROUP@@userservice is changed, add it to push queue.
+
+2022-09-17 07:28:45,879 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:52418, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,52418,204687778216500
+
+2022-09-17 07:28:45,879 INFO send udp packet: 192.168.237.1,52418,204687778216500
+
+2022-09-17 07:28:45,880 INFO serviceName: DEFAULT_GROUP@@userservice changed, schedule push for: 192.168.237.1:57021, agent: Nacos-Java-Client:v1.4.2, key: 192.168.237.1,57021,204687778216500
+
+2022-09-17 07:28:45,880 INFO send udp packet: 192.168.237.1,57021,204687778216500
+
+2022-09-17 07:28:45,899 INFO received ack: {"type": "push-ack", "lastRefTime":"204687778216500", "data":""} from: 192.168.237.1:57021, cost: 19 ms, unacked: 1, total push: 5
+
+2022-09-17 07:28:46,023 INFO received ack: {"type": "push-ack", "lastRefTime":"204687778216500", "data":""} from: 192.168.237.1:52418, cost: 144 ms, unacked: 0, total push: 5
+

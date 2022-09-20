@@ -1,0 +1,16 @@
+2022-09-17 07:28:38,797 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8081@DEFAULT@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1663334838234
+
+2022-09-17 07:28:38,797 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8080@DEFAULT@DEFAULT_GROUP@@orderservice, region: unknown, msg: client timeout after 15000, last beat: 1663334836793
+
+2022-09-17 07:28:39,300 INFO service: DEFAULT_GROUP@@orderservice {POS} {IP-ENABLED} valid: 192.168.153.1:8080@DEFAULT, region: unknown, msg: client beat ok
+
+2022-09-17 07:28:39,812 INFO service: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 192.168.153.1:8081@DEFAULT, region: unknown, msg: client beat ok
+
+2022-09-17 07:28:42,489 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8081:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-17 07:28:42,491 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8082_true,
+
+2022-09-17 07:28:44,857 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8081:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-17 07:28:44,857 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,192.168.153.1:8082_true,
+

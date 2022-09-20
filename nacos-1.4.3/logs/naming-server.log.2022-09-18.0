@@ -1,0 +1,28 @@
+2022-09-18 08:43:50,754 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@orderservice
+
+2022-09-18 08:43:50,814 INFO [AUTO-DELETE-IP] service: DEFAULT_GROUP@@orderservice, ip: {"instanceId":"192.168.153.1#8080#DEFAULT#DEFAULT_GROUP@@orderservice","ip":"192.168.153.1","port":8080,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@orderservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663424245864,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}
+
+2022-09-18 08:43:50,814 INFO [AUTO-DELETE-IP] service: DEFAULT_GROUP@@userservice, ip: {"instanceId":"192.168.153.1#8081#DEFAULT#DEFAULT_GROUP@@userservice","ip":"192.168.153.1","port":8081,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663424245093,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}
+
+2022-09-18 08:43:51,055 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@orderservice
+
+2022-09-18 08:43:51,165 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2022-09-18 08:43:51,221 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2022-09-18 08:43:51,222 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2022-09-18 08:43:51,361 INFO [AUTO-DELETE-IP] service: DEFAULT_GROUP@@userservice, ip: {"instanceId":"192.168.153.1#8082#DEFAULT#DEFAULT_GROUP@@userservice","ip":"192.168.153.1","port":8082,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663424246038,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}
+
+2022-09-18 08:43:51,701 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[]}
+
+2022-09-18 08:43:52,188 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@orderservice, value: {"instanceList":[]}
+
+2022-09-18 08:43:52,188 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[]}
+
+2022-09-18 08:43:52,695 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@orderservice, value: {"instanceList":[{"instanceId":"192.168.153.1#8080#DEFAULT#DEFAULT_GROUP@@orderservice","ip":"192.168.153.1","port":8080,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@orderservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663461832663,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]}
+
+2022-09-18 08:43:52,867 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[{"instanceId":"192.168.153.1#8082#DEFAULT#DEFAULT_GROUP@@userservice","ip":"192.168.153.1","port":8082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663461832866,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]}
+
+2022-09-18 08:43:56,660 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[{"instanceId":"192.168.153.1#8081#DEFAULT#DEFAULT_GROUP@@userservice","ip":"192.168.153.1","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663461836659,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000},{"instanceId":"192.168.153.1#8082#DEFAULT#DEFAULT_GROUP@@userservice","ip":"192.168.153.1","port":8082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1663461832866,"marked":false,"app":"unknown","instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000,"ipDeleteTimeout":30000}]}
+

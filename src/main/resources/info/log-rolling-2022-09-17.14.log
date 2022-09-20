@@ -1,7 +1,0 @@
-2022-09-17 13:00:11 [INFO ] http-nio-8110-exec-5 DictServiceImpl.java:91 com.krian.finance.core.service.impl.DictServiceImpl 将数据存入Redis中！
-2022-09-17 13:00:14 [INFO ] http-nio-8110-exec-8 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
-2022-09-17 13:00:14 [INFO ] http-nio-8110-exec-8 DictServiceImpl.java:69 com.krian.finance.core.service.impl.DictServiceImpl 获取Redis中Dict数据成功！
-2022-09-17 13:00:16 [INFO ] http-nio-8110-exec-7 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
-2022-09-17 13:00:16 [INFO ] http-nio-8110-exec-7 DictServiceImpl.java:69 com.krian.finance.core.service.impl.DictServiceImpl 获取Redis中Dict数据成功！
-2022-09-17 13:00:20 [INFO ] http-nio-8110-exec-10 DictServiceImpl.java:65 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
-2022-09-17 13:00:20 [INFO ] http-nio-8110-exec-10 DictServiceImpl.java:91 com.krian.finance.core.service.impl.DictServiceImpl 将数据存入Redis中！

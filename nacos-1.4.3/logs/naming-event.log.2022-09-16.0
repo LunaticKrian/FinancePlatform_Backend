@@ -1,0 +1,10 @@
+2022-09-16 06:54:15,642 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8082@DEFAULT@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1663248561983
+
+2022-09-16 06:54:16,700 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8082:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2022-09-16 06:54:16,701 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,
+
+2022-09-16 06:54:17,957 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8082:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-16 06:54:17,957 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 192.168.153.1:8081_true,192.168.153.1:8082_true,
+

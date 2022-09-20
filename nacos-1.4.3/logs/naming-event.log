@@ -1,0 +1,12 @@
+2022-09-20 08:44:24,346 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8120@DEFAULT@DEFAULT_GROUP@@service-sms, region: unknown, msg: client timeout after 15000, last beat: 1663597530808
+
+2022-09-20 08:44:24,354 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8130@DEFAULT@DEFAULT_GROUP@@service-oss, region: unknown, msg: client timeout after 15000, last beat: 1663634664320
+
+2022-09-20 08:44:24,354 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8110@DEFAULT@DEFAULT_GROUP@@service-core, region: unknown, msg: client timeout after 15000, last beat: 1663634664095
+
+2022-09-20 08:44:26,520 INFO service: DEFAULT_GROUP@@service-sms {POS} {IP-ENABLED} valid: 192.168.153.1:8120@DEFAULT, region: unknown, msg: client beat ok
+
+2022-09-20 08:44:29,113 INFO service: DEFAULT_GROUP@@service-core {POS} {IP-ENABLED} valid: 192.168.153.1:8110@DEFAULT, region: unknown, msg: client beat ok
+
+2022-09-20 08:44:29,332 INFO service: DEFAULT_GROUP@@service-oss {POS} {IP-ENABLED} valid: 192.168.153.1:8130@DEFAULT, region: unknown, msg: client beat ok
+

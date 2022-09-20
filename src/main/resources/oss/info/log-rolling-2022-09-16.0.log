@@ -1,8 +1,0 @@
-2022-09-16 18:55:02 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.ServiceOssApplication Starting ServiceOssApplication on DESKTOP-O0VU2GF with PID 20836 (E:\SoftwareProject\FinancePlatform\service-oss\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
-2022-09-16 18:55:02 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
-2022-09-16 18:55:04 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.ServiceOssApplication Started ServiceOssApplication in 3.262 seconds (JVM running for 4.935)
-2022-09-16 19:09:35 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.ServiceOssApplication Starting ServiceOssApplication on DESKTOP-O0VU2GF with PID 18124 (E:\SoftwareProject\FinancePlatform\service-oss\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
-2022-09-16 19:09:35 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
-2022-09-16 19:09:37 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.ServiceOssApplication Started ServiceOssApplication in 3.018 seconds (JVM running for 3.925)
-2022-09-16 19:09:52 [INFO ] main StartupInfoLogger.java:55 com.krian.finance.ServiceOssApplication Starting ServiceOssApplication on DESKTOP-O0VU2GF with PID 7436 (E:\SoftwareProject\FinancePlatform\service-oss\target\classes started by Krian in E:\SoftwareProject\FinancePlatform)
-2022-09-16 19:09:52 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev

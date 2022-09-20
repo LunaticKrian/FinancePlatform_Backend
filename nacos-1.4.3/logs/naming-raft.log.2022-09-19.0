@@ -1,0 +1,64 @@
+2022-09-19 14:57:57,026 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@orderservice
+
+2022-09-19 14:57:57,042 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@userservice
+
+2022-09-19 15:14:31,915 INFO raft peers changed: [Member{ip='192.168.153.1', port=8848, state=UP, extendInfo={raftPort=7848}}]
+
+2022-09-19 15:14:31,945 INFO initializing Raft sub-system
+
+2022-09-19 15:14:31,945 INFO finish loading all datums, size: 0 cost 0 ms.
+
+2022-09-19 15:14:31,947 INFO cache loaded, datum count: 0, current term: 0
+
+2022-09-19 15:14:31,947 INFO finish to load data from disk, cost: 2 ms.
+
+2022-09-19 15:14:31,951 INFO timer started: leader timeout ms: 15000, heart-beat timeout ms: 5000
+
+2022-09-19 15:14:32,659 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2022-09-19 15:14:32,683 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-09-19 15:14:36,906 WARN start to close old raft protocol!!!
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for notifier
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for master task
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for heartbeat task
+
+2022-09-19 15:14:36,906 WARN clean old cache datum for old raft
+
+2022-09-19 15:14:36,906 WARN start to close old raft protocol!!!
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for notifier
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for master task
+
+2022-09-19 15:14:36,906 WARN stop old raft protocol task for heartbeat task
+
+2022-09-19 15:14:36,906 WARN clean old cache datum for old raft
+
+2022-09-19 15:14:36,906 WARN start to move old raft protocol metadata
+
+2022-09-19 15:14:36,909 WARN start to move old raft protocol metadata
+
+2022-09-19 15:14:36,910 INFO raft peers changed: [Member{ip='192.168.153.1', port=8848, state=UP, extendInfo={lastRefreshTime=1663571676909, raftPort=7848, version=1.4.3}}]
+
+2022-09-19 15:18:25,935 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-core
+
+2022-09-19 15:18:30,084 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-sms
+
+2022-09-19 15:18:35,480 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-oss
+
+2022-09-19 19:32:52,723 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-sms
+
+2022-09-19 19:47:44,899 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-sms
+
+2022-09-19 19:47:52,697 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-core
+
+2022-09-19 19:47:52,699 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-oss
+
+2022-09-19 19:48:22,055 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-core
+
+2022-09-19 19:48:23,234 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-oss
+
