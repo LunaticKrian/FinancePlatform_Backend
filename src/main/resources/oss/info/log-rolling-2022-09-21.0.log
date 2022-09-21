@@ -1,0 +1,9 @@
+2022-09-19 19:31:42 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.ServiceOssApplication Started ServiceOssApplication in 10.43 seconds (JVM running for 11.976)
+2022-09-19 19:48:17 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
+2022-09-19 19:48:24 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.ServiceOssApplication Started ServiceOssApplication in 10.071 seconds (JVM running for 11.093)
+2022-09-20 20:50:25 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
+2022-09-20 20:50:35 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.ServiceOssApplication Started ServiceOssApplication in 13.278 seconds (JVM running for 14.559)
+2022-09-21 08:06:23 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
+2022-09-21 09:20:57 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
+2022-09-21 09:22:16 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev
+2022-09-21 09:27:28 [INFO ] main SpringApplication.java:655 com.krian.finance.ServiceOssApplication The following profiles are active: dev

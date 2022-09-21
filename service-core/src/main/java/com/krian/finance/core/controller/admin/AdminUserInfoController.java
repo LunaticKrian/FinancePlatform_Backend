@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -29,7 +30,7 @@ import javax.annotation.Resource;
 //@CrossOrigin
 public class AdminUserInfoController {
 
-    @Resource
+    @Autowired
     private UserInfoService userInfoService;
 
     @ApiOperation("获取会员分页列表")

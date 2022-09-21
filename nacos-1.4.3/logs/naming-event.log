@@ -1,12 +1,64 @@
-2022-09-20 08:44:24,346 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8120@DEFAULT@DEFAULT_GROUP@@service-sms, region: unknown, msg: client timeout after 15000, last beat: 1663597530808
+2022-09-21 09:27:29,056 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
 
-2022-09-20 08:44:24,354 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8130@DEFAULT@DEFAULT_GROUP@@service-oss, region: unknown, msg: client timeout after 15000, last beat: 1663634664320
+2022-09-21 09:27:29,059 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 192.168.153.1:8110_true,
 
-2022-09-20 08:44:24,354 INFO {POS} {IP-DISABLED} valid: 192.168.153.1:8110@DEFAULT@DEFAULT_GROUP@@service-core, region: unknown, msg: client timeout after 15000, last beat: 1663634664095
+2022-09-21 09:27:29,418 INFO DEFAULT_GROUP@@service-sms {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8120:unknown:DEFAULT_1.0_true_false_DEFAULT]
 
-2022-09-20 08:44:26,520 INFO service: DEFAULT_GROUP@@service-sms {POS} {IP-ENABLED} valid: 192.168.153.1:8120@DEFAULT, region: unknown, msg: client beat ok
+2022-09-21 09:27:29,418 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-sms, ips: 192.168.153.1:8120_true,
 
-2022-09-20 08:44:29,113 INFO service: DEFAULT_GROUP@@service-core {POS} {IP-ENABLED} valid: 192.168.153.1:8110@DEFAULT, region: unknown, msg: client beat ok
+2022-09-21 09:27:32,045 INFO DEFAULT_GROUP@@service-gateway {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:80:unknown:DEFAULT_1.0_true_false_DEFAULT]
 
-2022-09-20 08:44:29,332 INFO service: DEFAULT_GROUP@@service-oss {POS} {IP-ENABLED} valid: 192.168.153.1:8130@DEFAULT, region: unknown, msg: client beat ok
+2022-09-21 09:27:32,045 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-gateway, ips: 192.168.153.1:80_true,
+
+2022-09-21 09:27:34,502 INFO DEFAULT_GROUP@@service-oss {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8130:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 09:27:34,503 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-oss, ips: 192.168.153.1:8130_true,
+
+2022-09-21 19:16:49,495 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:16:49,500 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 
+
+2022-09-21 19:18:11,899 INFO DEFAULT_GROUP@@service-sms {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8120:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:18:11,900 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-sms, ips: 
+
+2022-09-21 19:18:16,550 INFO DEFAULT_GROUP@@service-gateway {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:80:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:18:16,550 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-gateway, ips: 
+
+2022-09-21 19:18:21,860 INFO DEFAULT_GROUP@@service-oss {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8130:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:18:21,860 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-oss, ips: 
+
+2022-09-21 19:44:45,401 INFO DEFAULT_GROUP@@service-oss {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8130:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:44:45,401 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-oss, ips: 192.168.153.1:8130_true,
+
+2022-09-21 19:57:32,167 INFO DEFAULT_GROUP@@service-oss {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8130:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 19:57:32,167 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-oss, ips: 
+
+2022-09-21 20:02:16,027 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 20:02:16,027 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 192.168.153.1:8110_true,
+
+2022-09-21 20:02:46,328 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 20:02:46,329 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 
+
+2022-09-21 20:07:20,901 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 20:07:20,901 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 192.168.153.1:8110_true,
+
+2022-09-21 20:07:43,195 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 20:07:43,195 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 
+
+2022-09-21 20:10:00,545 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 20:10:00,545 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 192.168.153.1:8110_true,
+
+2022-09-21 21:35:24,538 INFO DEFAULT_GROUP@@service-core {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.153.1:8110:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2022-09-21 21:35:24,538 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@service-core, ips: 
 

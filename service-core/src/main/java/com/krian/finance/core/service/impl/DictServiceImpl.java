@@ -17,6 +17,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +31,9 @@ import java.util.concurrent.TimeUnit;
  * @author krian
  * @since 2022-09-11
  */
-@Service
+
 @Slf4j
+@Service
 public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements DictService {
 
     @Autowired
@@ -97,6 +99,15 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
 
         // 5.返回查询到的数据结果：
         return dictList;
+    }
+
+    @Override
+    public List<Dict> findByDictCode(String dictCode) {
+        QueryWrapper<Dict> dictQueryWrapper = new QueryWrapper<>();
+        dictQueryWrapper.eq("dict_code", dictCode);
+        Dict dict = baseMapper.selectOne(dictQueryWrapper);
+
+        return this.listByParentId(dict.getId());
     }
 
     /**

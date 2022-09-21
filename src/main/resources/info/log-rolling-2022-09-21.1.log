@@ -1,0 +1,10 @@
+2022-09-21 20:02:17 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 12.17 seconds (JVM running for 13.233)
+2022-09-21 20:03:04 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:05:49 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:06:04 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:06:34 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:07:14 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:07:22 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.core.ServiceCoreApplication Started ServiceCoreApplication in 11.241 seconds (JVM running for 12.24)
+2022-09-21 20:08:00 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:09:39 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
+2022-09-21 20:09:53 [INFO ] main SpringApplication.java:655 com.krian.finance.core.ServiceCoreApplication The following profiles are active: dev
