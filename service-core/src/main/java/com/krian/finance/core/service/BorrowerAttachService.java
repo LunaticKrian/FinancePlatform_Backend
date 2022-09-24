@@ -2,6 +2,9 @@ package com.krian.finance.core.service;
 
 import com.krian.finance.core.pojo.entity.BorrowerAttach;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.krian.finance.core.pojo.vo.BorrowerAttachVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface BorrowerAttachService extends IService<BorrowerAttach> {
 
+    List<BorrowerAttachVo> selectBorrowerAttachVOList(Long id);
 }

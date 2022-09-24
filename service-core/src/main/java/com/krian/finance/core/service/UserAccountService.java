@@ -3,6 +3,8 @@ package com.krian.finance.core.service;
 import com.krian.finance.core.pojo.entity.UserAccount;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  * 用户账户 服务类
@@ -12,5 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-09-11
  */
 public interface UserAccountService extends IService<UserAccount> {
-
+    String commitCharge(BigDecimal chargeAmt, Long userId);
 }

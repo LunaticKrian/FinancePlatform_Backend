@@ -1,7 +1,12 @@
 package com.krian.finance.core.service;
 
+import com.krian.finance.core.pojo.entity.BorrowInfo;
 import com.krian.finance.core.pojo.entity.Lend;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.krian.finance.core.pojo.vo.BorrowInfoApprovalVo;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +18,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface LendService extends IService<Lend> {
 
+    void createLend(BorrowInfoApprovalVo borrowInfoApprovalVo, BorrowInfo borrowInfo);
+
+    List<Lend> selectList();
+
+    Map<String, Object> getLendDetail(Long id);
 }

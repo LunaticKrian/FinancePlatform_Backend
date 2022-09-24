@@ -1,0 +1,6 @@
+2022-09-21 21:45:12 [INFO ] http-nio-8110-exec-2 DictServiceImpl.java:67 com.krian.finance.core.service.impl.DictServiceImpl 尝试从Redis中获取数据！
+2022-09-21 21:45:13 [INFO ] http-nio-8110-exec-2 DictServiceImpl.java:93 com.krian.finance.core.service.impl.DictServiceImpl 将数据存入Redis中！
+2022-09-21 22:08:51 [INFO ] main SpringApplication.java:655 com.krian.finance.sms.ServiceSmsApplication The following profiles are active: dev
+2022-09-21 22:08:53 [INFO ] main SpringApplication.java:655 com.krian.finance.gateway.ServiceGatewayApplication The following profiles are active: dev
+2022-09-21 22:09:00 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.sms.ServiceSmsApplication Started ServiceSmsApplication in 12.903 seconds (JVM running for 14.129)
+2022-09-21 22:09:03 [INFO ] main StartupInfoLogger.java:61 com.krian.finance.gateway.ServiceGatewayApplication Started ServiceGatewayApplication in 13.853 seconds (JVM running for 14.928)

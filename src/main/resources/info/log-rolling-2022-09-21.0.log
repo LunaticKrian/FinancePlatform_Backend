@@ -18,7 +18,7 @@
 com.krian.common.exception.BusinessException: 未登录
 	at com.krian.finance.base.utils.JwtUtils.getClaims(JwtUtils.java:82)
 	at com.krian.finance.base.utils.JwtUtils.getUserId(JwtUtils.java:59)
-	at com.krian.finance.core.controller.api.AdminUserBindController.bind(AdminUserBindController.java:44)
+	at com.krian.finance.core.controller.api.UserBindController.bind(AdminUserBindController.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -74,7 +74,7 @@ com.krian.common.exception.BusinessException: 未登录
 com.krian.common.exception.BusinessException: 未登录
 	at com.krian.finance.base.utils.JwtUtils.getClaims(JwtUtils.java:82)
 	at com.krian.finance.base.utils.JwtUtils.getUserId(JwtUtils.java:59)
-	at com.krian.finance.core.controller.api.AdminUserBindController.bind(AdminUserBindController.java:44)
+	at com.krian.finance.core.controller.api.UserBindController.bind(AdminUserBindController.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

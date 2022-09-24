@@ -6,6 +6,8 @@ import com.krian.finance.core.service.UserAccountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  * 用户账户 服务实现类
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserAccountServiceImpl extends ServiceImpl<UserAccountMapper, UserAccount> implements UserAccountService {
 
+    @Override
+    public String commitCharge(BigDecimal chargeAmt, Long userId) {
+        return null;
+    }
 }

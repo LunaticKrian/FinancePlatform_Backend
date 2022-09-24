@@ -1,0 +1,7 @@
+2022/09/15 12:10:29 [error] 10264#10976: *1 CreateFile() "C:\Users\Krian\Desktop\nginx-1.20.2/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2022/09/15 12:10:56 [notice] 13888#9184: signal process started
+2022/09/20 20:36:47 [notice] 9712#26316: signal process started
+2022/09/20 20:36:47 [error] 9712#26316: OpenEvent("Global\ngx_stop_9148") failed (2: The system cannot find the file specified)
+2022/09/20 20:37:19 [notice] 24544#21432: signal process started
+2022/09/20 20:37:19 [error] 24544#21432: OpenEvent("Global\ngx_stop_9148") failed (2: The system cannot find the file specified)
+2022/09/24 07:35:00 [notice] 11432#17988: signal process started
