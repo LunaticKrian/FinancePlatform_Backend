@@ -40,3 +40,27 @@
 
 2022-09-24 07:34:35,969 INFO raft peers changed: [Member{ip='192.168.153.1', port=8848, state=UP, extendInfo={lastRefreshTime=1663976075968, raftPort=7848, version=1.4.3}}]
 
+2022-09-24 07:36:39,554 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-core
+
+2022-09-24 10:56:25,893 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-sms
+
+2022-09-24 10:56:29,818 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-gateway
+
+2022-09-24 10:56:32,415 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-oss
+
+2022-09-24 16:12:19,301 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-core
+
+2022-09-24 16:12:19,320 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-gateway
+
+2022-09-24 16:12:19,320 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-oss
+
+2022-09-24 16:12:19,321 INFO [RAFT-NOTIFIER] datum is deleted, key: com.alibaba.nacos.naming.domains.meta.public##DEFAULT_GROUP@@service-sms
+
+2022-09-24 16:29:25,755 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-sms
+
+2022-09-24 16:29:33,646 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-core
+
+2022-09-24 16:29:34,522 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-gateway
+
+2022-09-24 16:29:37,402 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@service-oss
+
