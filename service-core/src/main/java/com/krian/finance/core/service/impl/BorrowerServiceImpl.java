@@ -1,29 +1,28 @@
 package com.krian.finance.core.service.impl;
 
+import com.krian.finance.core.enums.BorrowerStatusEnum;
+import com.krian.finance.core.enums.IntegralEnum;
+import com.krian.finance.core.mapper.BorrowerAttachMapper;
+import com.krian.finance.core.mapper.UserInfoMapper;
+import com.krian.finance.core.mapper.UserIntegralMapper;
+import com.krian.finance.core.pojo.entity.Borrower;
+import com.krian.finance.core.mapper.BorrowerMapper;
+import com.krian.finance.core.pojo.entity.BorrowerAttach;
+import com.krian.finance.core.pojo.entity.UserInfo;
+import com.krian.finance.core.pojo.entity.UserIntegral;
+import com.krian.finance.core.pojo.vo.BorrowerApprovalVO;
+import com.krian.finance.core.pojo.vo.BorrowerAttachVO;
+import com.krian.finance.core.pojo.vo.BorrowerDetailVO;
+import com.krian.finance.core.pojo.vo.BorrowerVO;
+import com.krian.finance.core.service.BorrowerAttachService;
+import com.krian.finance.core.service.BorrowerService;
+import com.krian.finance.core.service.DictService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.krian.finance.core.enums.BorrowerStatusEnum;
-import com.krian.finance.core.enums.IntegralEnum;
-import com.krian.finance.core.mapper.BorrowerAttachMapper;
-import com.krian.finance.core.mapper.BorrowerMapper;
-import com.krian.finance.core.mapper.UserInfoMapper;
-import com.krian.finance.core.mapper.UserIntegralMapper;
-import com.krian.finance.core.pojo.entity.BorrowerAttach;
-import com.krian.finance.core.pojo.entity.UserInfo;
-import com.krian.finance.core.pojo.entity.UserIntegral;
-import com.krian.finance.core.pojo.vo.BorrowerApprovalVo;
-import com.krian.finance.core.pojo.vo.BorrowerAttachVo;
-import com.krian.finance.core.pojo.vo.BorrowerDetailVo;
-import com.krian.finance.core.pojo.vo.BorrowerVo;
-import com.krian.finance.core.service.BorrowerAttachService;
-import com.krian.finance.core.service.BorrowerService;
-import com.krian.finance.core.pojo.entity.Borrower;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.krian.finance.core.service.DictService;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,36 +34,37 @@ import java.util.List;
  * 借款人 服务实现类
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Service
 public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> implements BorrowerService {
 
-    @Autowired
+    @Resource
     private UserInfoMapper userInfoMapper;
 
-    @Autowired
+    @Resource
     private BorrowerAttachMapper borrowerAttachMapper;
 
-    @Autowired
+    @Resource
     private BorrowerAttachService borrowerAttachService;
 
-    @Autowired
+    @Resource
     private DictService dictService;
 
-    @Autowired
+    @Resource
     private UserIntegralMapper userIntegralMapper;
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void saveBorrowerVoByUserId(BorrowerVo borrowerVo, Long userId) {
-        // 获取用户基本信息
+    public void saveBorrowerVOByUserId(BorrowerVO borrowerVO, Long userId) {
+
+        //获取用户基本信息
         UserInfo userInfo = userInfoMapper.selectById(userId);
 
-        // 保存借款人信息
+        //保存借款人信息
         Borrower borrower = new Borrower();
-        BeanUtils.copyProperties(borrowerVo, borrower);
+        BeanUtils.copyProperties(borrowerVO, borrower);
         borrower.setUserId(userId);
         borrower.setName(userInfo.getName());
         borrower.setIdCard(userInfo.getIdCard());
@@ -72,14 +72,14 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         borrower.setStatus(BorrowerStatusEnum.AUTH_RUN.getStatus()); //认证中
         baseMapper.insert(borrower);
 
-        // 保存附件
-        List<BorrowerAttach> borrowerAttachList = borrowerVo.getBorrowerAttachList();
+        //保存附件
+        List<BorrowerAttach> borrowerAttachList = borrowerVO.getBorrowerAttachList();
         borrowerAttachList.forEach(borrowerAttach -> {
             borrowerAttach.setBorrowerId(borrower.getId());
             borrowerAttachMapper.insert(borrowerAttach);
         });
 
-        // 更新userInfo中的借款人认证状态
+        //更新userInfo中的借款人认证状态
         userInfo.setBorrowAuthStatus(BorrowerStatusEnum.AUTH_RUN.getStatus());
         userInfoMapper.updateById(userInfo);
     }
@@ -90,17 +90,17 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         QueryWrapper<Borrower> borrowerQueryWrapper = new QueryWrapper<>();
         borrowerQueryWrapper.select("status").eq("user_id", userId);
         List<Object> objects = baseMapper.selectObjs(borrowerQueryWrapper);
-        if (objects.size() == 0) {
+        if(objects.size() == 0){
             return BorrowerStatusEnum.NO_AUTH.getStatus();
         }
 
-        Integer status = (Integer) objects.get(0);
+        Integer status = (Integer)objects.get(0);
         return status;
     }
 
     @Override
     public IPage<Borrower> listPage(Page<Borrower> pageParam, String keyword) {
-        if (StringUtils.isBlank(keyword)) {
+        if(StringUtils.isBlank(keyword)){
             return baseMapper.selectPage(pageParam, null);
         }
 
@@ -115,50 +115,50 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
     }
 
     @Override
-    public BorrowerDetailVo getBorrowerDetailVOById(Long id) {
+    public BorrowerDetailVO getBorrowerDetailVOById(Long id) {
 
         //获取借款人信息
         Borrower borrower = baseMapper.selectById(id);
 
         //填充基本借款人信息
-        BorrowerDetailVo borrowerDetailVo = new BorrowerDetailVo();
-        BeanUtils.copyProperties(borrower, borrowerDetailVo);
+        BorrowerDetailVO borrowerDetailVO = new BorrowerDetailVO();
+        BeanUtils.copyProperties(borrower, borrowerDetailVO);
 
         //婚否
-        borrowerDetailVo.setMarry(borrower.getMarry() ? "是" : "否");
+        borrowerDetailVO.setMarry(borrower.getMarry()?"是":"否");
         //性别
-        borrowerDetailVo.setSex(borrower.getSex() == 1 ? "男" : "女");
+        borrowerDetailVO.setSex(borrower.getSex()==1?"男":"女");
 
         //下拉列表
-        borrowerDetailVo.setEducation(dictService.getNameByParentDictCodeAndValue("education", borrower.getEducation()));
-        borrowerDetailVo.setIndustry(dictService.getNameByParentDictCodeAndValue("industry", borrower.getIndustry()));
-        borrowerDetailVo.setIncome(dictService.getNameByParentDictCodeAndValue("income", borrower.getIncome()));
-        borrowerDetailVo.setReturnSource(dictService.getNameByParentDictCodeAndValue("returnSource", borrower.getReturnSource()));
-        borrowerDetailVo.setContactsRelation(dictService.getNameByParentDictCodeAndValue("relation", borrower.getContactsRelation()));
+        borrowerDetailVO.setEducation(dictService.getNameByParentDictCodeAndValue("education", borrower.getEducation()));
+        borrowerDetailVO.setIndustry(dictService.getNameByParentDictCodeAndValue("industry", borrower.getIndustry()));
+        borrowerDetailVO.setIncome(dictService.getNameByParentDictCodeAndValue("income", borrower.getIncome()));
+        borrowerDetailVO.setReturnSource(dictService.getNameByParentDictCodeAndValue("returnSource", borrower.getReturnSource()));
+        borrowerDetailVO.setContactsRelation(dictService.getNameByParentDictCodeAndValue("relation", borrower.getContactsRelation()));
 
         //审批状态
         String status = BorrowerStatusEnum.getMsgByStatus(borrower.getStatus());
-        borrowerDetailVo.setStatus(status);
+        borrowerDetailVO.setStatus(status);
 
         //附件列表
-        List<BorrowerAttachVo> borrowerAttachVOList = borrowerAttachService.selectBorrowerAttachVOList(id);
-        borrowerDetailVo.setBorrowerAttachVOList(borrowerAttachVOList);
+        List<BorrowerAttachVO> borrowerAttachVOList = borrowerAttachService.selectBorrowerAttachVOList(id);
+        borrowerDetailVO.setBorrowerAttachVOList(borrowerAttachVOList);
 
-        return borrowerDetailVo;
+        return borrowerDetailVO;
     }
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void approval(BorrowerApprovalVo borrowerApprovalVo) {
+    public void approval(BorrowerApprovalVO borrowerApprovalVO) {
 
         //获取借款额度申请id
-        Long borrowerId = borrowerApprovalVo.getBorrowerId();
+        Long borrowerId = borrowerApprovalVO.getBorrowerId();
 
         //获取借款额度申请对象
         Borrower borrower = baseMapper.selectById(borrowerId);
 
         //设置审核状态
-        borrower.setStatus(borrowerApprovalVo.getStatus());
+        borrower.setStatus(borrowerApprovalVO.getStatus());
         baseMapper.updateById(borrower);
 
         //获取用户id
@@ -173,13 +173,13 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         //计算基本信息积分
         UserIntegral userIntegral = new UserIntegral();
         userIntegral.setUserId(userId);
-        userIntegral.setIntegral(borrowerApprovalVo.getInfoIntegral());
+        userIntegral.setIntegral(borrowerApprovalVO.getInfoIntegral());
         userIntegral.setContent("借款人基本信息");
         userIntegralMapper.insert(userIntegral);
-        int currentIntegral = integral + borrowerApprovalVo.getInfoIntegral();
+        int currentIntegral = integral + borrowerApprovalVO.getInfoIntegral();
 
         //身份证积分
-        if (borrowerApprovalVo.getIsIdCardOk()) {
+        if(borrowerApprovalVO.getIsIdCardOk()){
             userIntegral = new UserIntegral();
             userIntegral.setUserId(userId);
             userIntegral.setIntegral(IntegralEnum.BORROWER_IDCARD.getIntegral());
@@ -189,7 +189,7 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         }
 
         //房产积分
-        if (borrowerApprovalVo.getIsHouseOk()) {
+        if(borrowerApprovalVO.getIsHouseOk()){
             userIntegral = new UserIntegral();
             userIntegral.setUserId(userId);
             userIntegral.setIntegral(IntegralEnum.BORROWER_HOUSE.getIntegral());
@@ -199,7 +199,7 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         }
 
         //车辆积分
-        if (borrowerApprovalVo.getIsCarOk()) {
+        if(borrowerApprovalVO.getIsCarOk()){
             userIntegral = new UserIntegral();
             userIntegral.setUserId(userId);
             userIntegral.setIntegral(IntegralEnum.BORROWER_CAR.getIntegral());
@@ -212,7 +212,7 @@ public class BorrowerServiceImpl extends ServiceImpl<BorrowerMapper, Borrower> i
         userInfo.setIntegral(currentIntegral);
 
         //修改审核状态
-        userInfo.setBorrowAuthStatus(borrowerApprovalVo.getStatus());
+        userInfo.setBorrowAuthStatus(borrowerApprovalVO.getStatus());
 
         //更新userInfo
         userInfoMapper.updateById(userInfo);

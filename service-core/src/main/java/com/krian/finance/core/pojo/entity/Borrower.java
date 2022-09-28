@@ -16,8 +16,8 @@ import lombok.EqualsAndHashCode;
  * 借款人
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -27,7 +27,7 @@ public class Borrower implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "编号")
-    @TableId(value = "id", type = IdType.AUTO)
+      @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     @ApiModelProperty(value = "用户id")
@@ -73,7 +73,7 @@ public class Borrower implements Serializable {
     @ApiModelProperty(value = "联系人关系")
     private Integer contactsRelation;
 
-    @ApiModelProperty(value = "状态（0：未认证，1：认证中， 2：认证通过， -1：认证失败）")
+    @ApiModelProperty(value = "状态（0：认证中 1：认证通过 -1：认证失败）")
     private Integer status;
 
     @ApiModelProperty(value = "创建时间")

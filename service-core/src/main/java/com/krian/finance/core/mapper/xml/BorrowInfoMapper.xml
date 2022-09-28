@@ -3,11 +3,12 @@
 <mapper namespace="com.krian.finance.core.mapper.BorrowInfoMapper">
 
     <select id="selectBorrowInfoList" resultType="com.krian.finance.core.pojo.entity.BorrowInfo">
-        select bi.*,
-               b.name,
-               b.mobile
+        select
+        bi.*,
+        b.name,
+        b.mobile
         from borrow_info as bi
-                 left join borrower as b on bi.user_id = b.user_id
+        left join borrower as b on bi.user_id = b.user_id
         where bi.is_deleted = 0
     </select>
 </mapper>

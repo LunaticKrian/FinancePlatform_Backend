@@ -4,11 +4,11 @@
 
     <insert id="insertBatch">
         insert into dict (
-        id ,
-        parent_id ,
-        name ,
-        value ,
-        dict_code
+            id ,
+            parent_id ,
+            name ,
+            value ,
+            dict_code
         ) values
         <foreach collection="list" item="item" index="index" separator=",">
             (

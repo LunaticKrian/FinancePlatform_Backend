@@ -1,16 +1,16 @@
 package com.krian.finance.core.controller.admin;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import com.krian.common.result.R;
 import com.krian.finance.core.pojo.entity.UserInfo;
 import com.krian.finance.core.pojo.query.UserInfoQuery;
 import com.krian.finance.core.service.UserInfoService;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -30,7 +30,7 @@ import javax.annotation.Resource;
 //@CrossOrigin
 public class AdminUserInfoController {
 
-    @Autowired
+    @Resource
     private UserInfoService userInfoService;
 
     @ApiOperation("获取会员分页列表")
@@ -42,12 +42,12 @@ public class AdminUserInfoController {
             @PathVariable Long limit,
             @ApiParam(value = "查询对象", required = false)
             UserInfoQuery userInfoQuery
+
     ){
         Page<UserInfo> pageParam = new Page<>(page, limit);
         IPage<UserInfo> pageModel = userInfoService.listPage(pageParam, userInfoQuery);
         return R.SUCCESS().data("pageModel", pageModel);
     }
-
 
     @ApiOperation("锁定和解锁")
     @PutMapping("/lock/{id}/{status}")
@@ -62,3 +62,4 @@ public class AdminUserInfoController {
         return R.SUCCESS().message(status==1?"解锁成功":"锁定成功");
     }
 }
+

@@ -1,10 +1,10 @@
 package com.krian.finance.core.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.krian.finance.core.mapper.BorrowerAttachMapper;
-import com.krian.finance.core.pojo.vo.BorrowerAttachVo;
-import com.krian.finance.core.service.BorrowerAttachService;
 import com.krian.finance.core.pojo.entity.BorrowerAttach;
+import com.krian.finance.core.pojo.vo.BorrowerAttachVO;
+import com.krian.finance.core.service.BorrowerAttachService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -16,22 +16,22 @@ import java.util.List;
  * 借款人上传资源表 服务实现类
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Service
 public class BorrowerAttachServiceImpl extends ServiceImpl<BorrowerAttachMapper, BorrowerAttach> implements BorrowerAttachService {
 
     @Override
-    public List<BorrowerAttachVo> selectBorrowerAttachVOList(Long borrowerId) {
+    public List<BorrowerAttachVO> selectBorrowerAttachVOList(Long borrowerId) {
 
         QueryWrapper<BorrowerAttach> borrowerAttachQueryWrapper = new QueryWrapper<>();
         borrowerAttachQueryWrapper.eq("borrower_id", borrowerId);
         List<BorrowerAttach> borrowerAttachList = baseMapper.selectList(borrowerAttachQueryWrapper);
 
-        List<BorrowerAttachVo> borrowerAttachVOList = new ArrayList<>();
+        List<BorrowerAttachVO> borrowerAttachVOList = new ArrayList<>();
         borrowerAttachList.forEach(borrowerAttach -> {
-            BorrowerAttachVo borrowerAttachVO = new BorrowerAttachVo();
+            BorrowerAttachVO borrowerAttachVO = new BorrowerAttachVO();
             borrowerAttachVO.setImageType(borrowerAttach.getImageType());
             borrowerAttachVO.setImageUrl(borrowerAttach.getImageUrl());
 

@@ -4,13 +4,10 @@ package com.krian.finance.core.controller.admin;
 import com.krian.common.result.R;
 import com.krian.finance.core.pojo.entity.Lend;
 import com.krian.finance.core.service.LendService;
-import com.krian.finance.core.pojo.entity.Lend;
-import com.krian.finance.core.service.LendService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +31,7 @@ import java.util.Map;
 @Slf4j
 public class AdminLendController {
 
-    @Autowired
+    @Resource
     private LendService lendService;
 
     @ApiOperation("标的列表")
@@ -51,5 +48,14 @@ public class AdminLendController {
             @PathVariable Long id) {
         Map<String, Object> result = lendService.getLendDetail(id);
         return R.SUCCESS().data("lendDetail", result);
+    }
+
+    @ApiOperation("放款")
+    @GetMapping("/makeLoan/{id}")
+    public R makeLoan(
+            @ApiParam(value = "标的id", required = true)
+            @PathVariable("id") Long id) {
+        lendService.makeLoan(id);
+        return R.SUCCESS().message("放款成功");
     }
 }

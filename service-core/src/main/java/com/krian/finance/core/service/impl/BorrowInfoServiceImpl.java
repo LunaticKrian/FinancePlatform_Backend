@@ -1,6 +1,5 @@
 package com.krian.finance.core.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.krian.common.exception.Assert;
 import com.krian.common.result.ResponseEnum;
 import com.krian.finance.core.enums.BorrowInfoStatusEnum;
@@ -10,21 +9,22 @@ import com.krian.finance.core.mapper.BorrowInfoMapper;
 import com.krian.finance.core.mapper.BorrowerMapper;
 import com.krian.finance.core.mapper.IntegralGradeMapper;
 import com.krian.finance.core.mapper.UserInfoMapper;
+import com.krian.finance.core.pojo.entity.BorrowInfo;
 import com.krian.finance.core.pojo.entity.Borrower;
 import com.krian.finance.core.pojo.entity.IntegralGrade;
 import com.krian.finance.core.pojo.entity.UserInfo;
-import com.krian.finance.core.pojo.vo.BorrowInfoApprovalVo;
-import com.krian.finance.core.pojo.vo.BorrowerDetailVo;
+import com.krian.finance.core.pojo.vo.BorrowInfoApprovalVO;
+import com.krian.finance.core.pojo.vo.BorrowerDetailVO;
 import com.krian.finance.core.service.BorrowInfoService;
-import com.krian.finance.core.pojo.entity.BorrowInfo;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.krian.finance.core.service.BorrowerService;
 import com.krian.finance.core.service.DictService;
 import com.krian.finance.core.service.LendService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
@@ -35,28 +35,28 @@ import java.util.Map;
  * 借款信息表 服务实现类
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Service
 public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowInfo> implements BorrowInfoService {
 
-    @Autowired
+    @Resource
     private UserInfoMapper userInfoMapper;
 
-    @Autowired
+    @Resource
     private IntegralGradeMapper integralGradeMapper;
 
-    @Autowired
+    @Resource
     private DictService dictService;
 
-    @Autowired
+    @Resource
     private BorrowerMapper borrowerMapper;
 
-    @Autowired
+    @Resource
     private BorrowerService borrowerService;
 
-    @Autowired
+    @Resource
     private LendService lendService;
 
     @Override
@@ -129,15 +129,18 @@ public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowI
 
     @Override
     public List<BorrowInfo> selectList() {
+
         List<BorrowInfo> borrowInfoList = baseMapper.selectBorrowInfoList();
         borrowInfoList.forEach(borrowInfo -> {
             String returnMethod = dictService.getNameByParentDictCodeAndValue("returnMethod", borrowInfo.getReturnMethod());
             String moneyUse = dictService.getNameByParentDictCodeAndValue("moneyUse", borrowInfo.getMoneyUse());
             String status = BorrowInfoStatusEnum.getMsgByStatus(borrowInfo.getStatus());
-            borrowInfo.getParam().put("moneyUser", moneyUse);
+
             borrowInfo.getParam().put("returnMethod", returnMethod);
+            borrowInfo.getParam().put("moneyUse", moneyUse);
             borrowInfo.getParam().put("status", status);
         });
+
         return borrowInfoList;
     }
 
@@ -157,7 +160,7 @@ public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowI
         QueryWrapper<Borrower> borrowerQueryWrapper = new QueryWrapper<>();
         borrowerQueryWrapper.eq("user_id", borrowInfo.getUserId());
         Borrower borrower = borrowerMapper.selectOne(borrowerQueryWrapper);
-        BorrowerDetailVo borrowerDetailVO = borrowerService.getBorrowerDetailVOById(borrower.getId());
+        BorrowerDetailVO borrowerDetailVO = borrowerService.getBorrowerDetailVOById(borrower.getId());
 
         //组装集合结果
         Map<String, Object> result = new HashMap<>();
@@ -166,21 +169,20 @@ public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowI
         return result;
     }
 
-
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void approval(BorrowInfoApprovalVo borrowInfoApprovalVo) {
+    public void approval(BorrowInfoApprovalVO borrowInfoApprovalVO) {
 
         //修改借款审核的状态 borrow_info
-        Long borrowInfoId = borrowInfoApprovalVo.getId();
+        Long borrowInfoId = borrowInfoApprovalVO.getId();
         BorrowInfo borrowInfo = baseMapper.selectById(borrowInfoId);
-        borrowInfo.setStatus(borrowInfoApprovalVo.getStatus());
+        borrowInfo.setStatus(borrowInfoApprovalVO.getStatus());
         baseMapper.updateById(borrowInfo);
 
         //如果审核通过，则产生新的标的记录 lend
-        if(borrowInfoApprovalVo.getStatus().intValue() == BorrowInfoStatusEnum.CHECK_OK.getStatus().intValue()){
+        if(borrowInfoApprovalVO.getStatus().intValue() == BorrowInfoStatusEnum.CHECK_OK.getStatus().intValue()){
             //创建新标的
-            lendService.createLend(borrowInfoApprovalVo, borrowInfo);
+            lendService.createLend(borrowInfoApprovalVO, borrowInfo);
         }
     }
 }

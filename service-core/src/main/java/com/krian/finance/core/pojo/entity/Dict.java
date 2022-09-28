@@ -1,23 +1,24 @@
 package com.krian.finance.core.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableField;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
  * 数据字典
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -43,7 +44,7 @@ public class Dict implements Serializable {
     private String dictCode;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createTime;
+    private LocalDateTime createTime; //代替了 Date    “createTime”：“2020-01-01 01:01:01”
 
     @ApiModelProperty(value = "更新时间")
     private LocalDateTime updateTime;
@@ -53,7 +54,6 @@ public class Dict implements Serializable {
     @TableLogic
     private Boolean deleted;
 
-    @TableField(exist = false)  // 表达逻辑概念的属性，和物理表没有关系，当前字段不存在物理表中
+    @TableField(exist = false) //表达逻辑概念的属性，和物理表没有关系，当前字段不存在于物理表中
     private boolean hasChildren;
-
 }

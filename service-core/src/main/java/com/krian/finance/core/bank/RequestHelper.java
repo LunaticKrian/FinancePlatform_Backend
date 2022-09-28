@@ -35,7 +35,7 @@ public class RequestHelper {
         for (Map.Entry<String, Object> param : sorted.entrySet()) {
             str.append(param.getValue()).append("|");
         }
-        str.append(BankConst.SIGN_KEY);
+        str.append(HfbConst.SIGN_KEY);
         log.info("加密前：" + str.toString());
         String md5Str = MD5.encrypt(str.toString());
         log.info("加密后：" + md5Str);

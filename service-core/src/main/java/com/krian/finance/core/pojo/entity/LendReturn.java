@@ -18,8 +18,8 @@ import lombok.EqualsAndHashCode;
  * 还款记录表
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

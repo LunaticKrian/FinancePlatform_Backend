@@ -1,41 +1,37 @@
 package com.krian.finance.core.pojo.entity;
 
-import java.math.BigDecimal;
-
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-
-import java.time.LocalDateTime;
-
-import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableField;
-
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
  * 借款信息表
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value = "BorrowInfo对象", description = "借款信息表")
+@ApiModel(value="BorrowInfo对象", description="借款信息表")
 public class BorrowInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "编号")
-    @TableId(value = "id", type = IdType.AUTO)
+      @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     @ApiModelProperty(value = "借款用户id")
@@ -56,7 +52,7 @@ public class BorrowInfo implements Serializable {
     @ApiModelProperty(value = "资金用途")
     private Integer moneyUse;
 
-    @ApiModelProperty(value = "状态（0：未提交，1：审核中， 2：审核通过， -1：审核不通过）")
+    @ApiModelProperty(value = "状态（0：默认 1：审核通过 -1：审核不通过）")
     private Integer status;
 
     @ApiModelProperty(value = "创建时间")
@@ -69,6 +65,7 @@ public class BorrowInfo implements Serializable {
     @TableField("is_deleted")
     @TableLogic
     private Boolean deleted;
+
 
     //扩展字段
     @ApiModelProperty(value = "姓名")

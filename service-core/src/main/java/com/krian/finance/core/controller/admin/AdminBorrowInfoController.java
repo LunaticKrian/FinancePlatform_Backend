@@ -2,7 +2,7 @@ package com.krian.finance.core.controller.admin;
 
 import com.krian.common.result.R;
 import com.krian.finance.core.pojo.entity.BorrowInfo;
-import com.krian.finance.core.pojo.vo.BorrowInfoApprovalVo;
+import com.krian.finance.core.pojo.vo.BorrowInfoApprovalVO;
 import com.krian.finance.core.service.BorrowInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,7 +42,7 @@ public class AdminBorrowInfoController {
 
     @ApiOperation("审批借款信息")
     @PostMapping("/approval")
-    public R approval(@RequestBody BorrowInfoApprovalVo borrowInfoApprovalVO) {
+    public R approval(@RequestBody BorrowInfoApprovalVO borrowInfoApprovalVO) {
 
         borrowInfoService.approval(borrowInfoApprovalVO);
         return R.SUCCESS().message("审批完成");

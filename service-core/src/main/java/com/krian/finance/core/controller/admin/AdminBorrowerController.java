@@ -1,13 +1,12 @@
 package com.krian.finance.core.controller.admin;
 
-
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.krian.common.result.R;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.krian.finance.core.pojo.entity.Borrower;
-import com.krian.finance.core.pojo.vo.BorrowerApprovalVo;
-import com.krian.finance.core.pojo.vo.BorrowerDetailVo;
+import com.krian.finance.core.pojo.vo.BorrowerApprovalVO;
+import com.krian.finance.core.pojo.vo.BorrowerDetailVO;
 import com.krian.finance.core.service.BorrowerService;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -38,7 +37,7 @@ public class AdminBorrowerController {
             @RequestParam String keyword) {
 
         Page<Borrower> pageParam = new Page<>(page, limit);
-        IPage<Borrower> pageModel = borrowerService.listPage(pageParam, keyword);
+        IPage<Borrower> pageModel =  borrowerService.listPage(pageParam, keyword);
         return R.SUCCESS().data("pageModel", pageModel);
     }
 
@@ -46,16 +45,16 @@ public class AdminBorrowerController {
     @GetMapping("/show/{id}")
     public R show(
             @ApiParam(value = "借款人id", required = true)
-            @PathVariable Long id) {
+            @PathVariable Long id){
 
-        BorrowerDetailVo borrowerDetailVo = borrowerService.getBorrowerDetailVOById(id);
-        return R.SUCCESS().data("borrowerDetailVo", borrowerDetailVo);
+        BorrowerDetailVO borrowerDetailVO = borrowerService.getBorrowerDetailVOById(id);
+        return R.SUCCESS().data("borrowerDetailVO", borrowerDetailVO);
     }
 
     @ApiOperation("借款额度审批")
     @PostMapping("/approval")
-    public R approval(@RequestBody BorrowerApprovalVo borrowerApprovalVo) {
-        borrowerService.approval(borrowerApprovalVo);
+    public R approval(@RequestBody BorrowerApprovalVO borrowerApprovalVO){
+        borrowerService.approval(borrowerApprovalVO);
         return R.SUCCESS().message("审批完成");
     }
 }

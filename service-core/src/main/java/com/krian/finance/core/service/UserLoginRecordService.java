@@ -10,8 +10,8 @@ import java.util.List;
  * 用户登录记录表 服务类
  * </p>
  *
- * @author krian
- * @since 2022-09-11
+ * @author Helen
+ * @since 2021-02-20
  */
 public interface UserLoginRecordService extends IService<UserLoginRecord> {
 

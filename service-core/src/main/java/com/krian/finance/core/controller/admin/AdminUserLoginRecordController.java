@@ -8,7 +8,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -26,10 +25,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/core/userLoginRecord")
 @Slf4j
-//@CrossOrigin
 public class AdminUserLoginRecordController {
 
-    @Autowired
+    @Resource
     private UserLoginRecordService userLoginRecordService;
 
     @ApiOperation("获取会员登录日志列表")
@@ -42,3 +40,4 @@ public class AdminUserLoginRecordController {
         return R.SUCCESS().data("list", userLoginRecordList);
     }
 }
+
