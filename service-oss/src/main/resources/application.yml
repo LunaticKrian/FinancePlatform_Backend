@@ -15,6 +15,6 @@ spring:
 aliyun:
   oss:
     endpoint: oss-cn-hangzhou.aliyuncs.com
-    keyId: LTAI5tHFChAXsSgfvgRs7qBZ
-    keySecret: qkV6MfGwzxDcHB9jSidljsOPSXaRJh
+    keyId: 
+    keySecret: 
     bucketName: finace-file
